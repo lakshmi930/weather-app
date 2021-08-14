@@ -1,4 +1,28 @@
+import axios from "axios";
+import React, { useState } from "react";
 import styled from "styled-components";
+
+import CityComponent from "./components/CityComponent";
+import WeatherComponent from "./components/WeatherComponent";
+
+const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
+
+export const WeatherIcons = {
+  "01d": "icons/sunny.svg",
+  "01n": "icons/night.svg",
+  "02d": "icons/day.svg",
+  "02n": "icons/cloudy-night.svg",
+  "03d": "icons/cloudy.svg",
+  "03n": "icons/cloudy.svg",
+  "04d": "icons/perfect-day.svg",
+  "04n": "icons/cloudy-night.svg",
+  "09d": "icons/rain.svg",
+  "09n": "icons/rain-night.svg",
+  "10d": "icons/rain.svg",
+  "10n": "icons/rain-night.svg",
+  "11d": "icons/storm.svg",
+  "11n": "icons/storm.svg",
+};
 
 const Container = styled.div`
   display: flex;
@@ -19,22 +43,24 @@ const AppLabel = styled.span`
   font-weight: bold;
 `
 
-const CityComponent = styled.div`
-  display: flex;
-  flex-direction: column;
-`
-
-const WeatherComponent = styled.div`
-  display: flex;
-  flex-direction: column;
-`
-
 function App() {
+  const [city, updateCity] = useState();
+  const [weather, updateWeather] = useState();
+
+  const fetchWeather = async (e) => {
+    e.preventDefault();
+    const response = 
+    await axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`);
+    updateWeather(response.data);
+  };
   return (
     <Container>
       <AppLabel>Current Weather</AppLabel>
-      <CityComponent>City Component</CityComponent>
-      <WeatherComponent>Weather Component</WeatherComponent>
+      {city && weather ? (
+      <WeatherComponent weather={weather} city={city}/> 
+      ) : ( 
+      <CityComponent updateCity={updateCity} fetchWeather={fetchWeather}/>
+      )}
     </Container>
   );
 }
