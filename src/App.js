@@ -50,7 +50,7 @@ function App() {
   const fetchWeather = async (e) => {
     e.preventDefault();
     const response = 
-    await axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`);
+    await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`);
     updateWeather(response.data);
   };
   return (
