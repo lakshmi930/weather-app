@@ -49,10 +49,10 @@ const WeatherLabel = styled.span`
 `;
 
 const WeatherInfoIcons = {
-    sunrise: "icons/temp.svg",
-    humidity: "icons/humidity.svg",
-    wind: "icons/wind.svg",
-    pressure: "icons/pressure.svg",
+    sunrise: "weather-app/icons/temp.svg",
+    humidity: "weather-app/icons/humidity.svg",
+    wind: "weather-app/icons/wind.svg",
+    pressure: "weather-app/icons/pressure.svg",
 };
 
 const InfoContainer = styled.div`
