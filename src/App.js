@@ -8,20 +8,20 @@ import WeatherComponent from "./components/WeatherComponent";
 const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
 
 export const WeatherIcons = {
-  "01d": "icons/sunny.svg",
-  "01n": "icons/night.svg",
-  "02d": "icons/day.svg",
-  "02n": "icons/cloudy-night.svg",
-  "03d": "icons/cloudy.svg",
-  "03n": "icons/cloudy.svg",
-  "04d": "icons/perfect-day.svg",
-  "04n": "icons/cloudy-night.svg",
-  "09d": "icons/rain.svg",
-  "09n": "icons/rain-night.svg",
-  "10d": "icons/rain.svg",
-  "10n": "icons/rain-night.svg",
-  "11d": "icons/storm.svg",
-  "11n": "icons/storm.svg",
+  "01d": "weather-app/icons/sunny.svg",
+  "01n": "weather-app/icons/night.svg",
+  "02d": "weather-app/icons/day.svg",
+  "02n": "weather-app/icons/cloudy-night.svg",
+  "03d": "weather-app/icons/cloudy.svg",
+  "03n": "weather-app/icons/cloudy.svg",
+  "04d": "weather-app/icons/perfect-day.svg",
+  "04n": "weather-app/icons/cloudy-night.svg",
+  "09d": "weather-app/icons/rain.svg",
+  "09n": "weather-app/icons/rain-night.svg",
+  "10d": "weather-app/icons/rain.svg",
+  "10n": "weather-app/icons/rain-night.svg",
+  "11d": "weather-app/icons/storm.svg",
+  "11n": "weather-app/icons/storm.svg",
 };
 
 const Container = styled.div`
